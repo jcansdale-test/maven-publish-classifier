@@ -1,6 +1,8 @@
 on:
   push:
   workflow_dispatch:
+  watch:
+    types: [started]
 
 env:
   GROUP_ID: com.octokat.app
