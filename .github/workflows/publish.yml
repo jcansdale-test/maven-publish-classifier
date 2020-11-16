@@ -36,7 +36,9 @@ jobs:
                   <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.0.2</version>
-                    <classifier>foo</classifier>
+                    <configuration>
+                      <classifier>foo</classifier>
+                    </configuration>
                   </plugin>
                 </plugins>
               </pluginManagement>
