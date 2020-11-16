@@ -81,4 +81,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }} # GITHUB_TOKEN is the default env for the password
 
-      - run: curl https://maven.pkg.github.com/jcansdale-test/maven-publish-classifier/${{ env.GROUP_ID }}/${{ env.ARTIFACT_ID }}/${{ env.VERSION }}/maven-metadata.xml -v -u token:${{ github.token }} | xmllint --format -
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump maven-metadata.xml
+        run: |
+          sudo apt-get install libxml2-utils
+          curl https://maven.pkg.github.com/jcansdale-test/maven-publish-classifier/${{ env.GROUP_ID }}/${{ env.ARTIFACT_ID }}/${{ env.VERSION }}/maven-metadata.xml -v -u token:${{ github.token }} | xmllint --format -
