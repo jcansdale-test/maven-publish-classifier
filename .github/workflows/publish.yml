@@ -30,7 +30,16 @@ jobs:
             <groupId>${{ env.GROUP_ID }}</groupId>
             <artifactId>${{ env.ARTIFACT_ID }}</artifactId>
             <version>${{ env.VERSION }}</version>
-            <classifier>myclassifier</classifier>
+            <build>
+              <pluginManagement>
+                <plugins>
+                  <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.0.2</version>
+                  </plugin>
+                </plugins>
+              </pluginManagement>
+            </build>
           </project>
           EOM
 
