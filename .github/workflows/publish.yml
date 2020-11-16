@@ -7,10 +7,17 @@ env:
   ARTIFACT_ID: octokat-app2
   VERSION: 1.0-SNAPSHOT
   CLASS_NAME: PublishApp
-  CLASSIFIER: arm64-v8a
 
 jobs:
   deploy:
+    strategy:
+      fail-fast: false
+      matrix:
+        classifier: ["simple", "with-dash", "with.dot"]
+
+    env:
+      CLASSIFIER: ${{ matrix.classifier }}
+
     runs-on: ubuntu-latest
 
     steps:
