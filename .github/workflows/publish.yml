@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        classifier: ["simple", "with-dash", "with.dot", "with_underscore"]
+        classifier: ["simple", "with-dash", "with.dot", "with_underscore", "camelCase"]
 
     env:
       CLASSIFIER: ${{ matrix.classifier }}
@@ -91,7 +91,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        classifier: ["simple", "with-dash", "with.dot", "with_underscore"]
+        classifier: ["simple", "with-dash", "with.dot", "with_underscore", "camelCase"]
 
     env:
       CLASSIFIER: ${{ matrix.classifier }}
@@ -144,7 +144,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        classifier: ["simple", "with-dash", "with.dot", "with_underscore"]
+        classifier: ["simple", "with-dash", "with.dot", "with_underscore", "camelCase"]
 
     env:
       CLASSIFIER: ${{ matrix.classifier }}
